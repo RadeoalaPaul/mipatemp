@@ -7,8 +7,8 @@ namespace MIPATemp
         public Meniu_principal()
         {
             InitializeComponent();
-
         }
+
         private void bIesire_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -24,5 +24,10 @@ namespace MIPATemp
         {
             
         }
+        private void TSInfo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Software for viewing the variation of humidity and temperature in time","Info",MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }

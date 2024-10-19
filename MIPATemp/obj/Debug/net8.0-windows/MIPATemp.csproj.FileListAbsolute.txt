@@ -30,3 +30,37 @@ D:\facultate\proiectSAIV\MIPATemp\bin\Debug\net8.0-windows\runtimes\win-x64\nati
 D:\facultate\proiectSAIV\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.csproj.AssemblyReference.cache
 D:\facultate\proiectSAIV\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.csproj.Up2Date
 D:\facultate\proiectSAIV\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.FConectare.resources
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\MIPATemp.exe
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\MIPATemp.deps.json
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\MIPATemp.runtimeconfig.json
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\MIPATemp.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\MIPATemp.pdb
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\Google.Protobuf.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\K4os.Compression.LZ4.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\K4os.Compression.LZ4.Streams.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\K4os.Hash.xxHash.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\MySql.Data.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\System.IO.Pipelines.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\ZstdSharp.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\runtimes\win-x64\native\comerr64.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\runtimes\win-x64\native\gssapi64.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\runtimes\win-x64\native\k5sprt64.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\runtimes\win-x64\native\krb5_64.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.csproj.AssemblyReference.cache
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.Fconectare.resources
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.Meniu_principal.resources
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.csproj.GenerateResource.cache
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.GeneratedMSBuildEditorConfig.editorconfig
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.AssemblyInfoInputs.cache
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.AssemblyInfo.cs
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.csproj.CoreCompileInputs.cache
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.sourcelink.json
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.csproj.Up2Date
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.dll
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\refint\MIPATemp.dll
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.pdb
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.genruntimeconfig.cache
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\ref\MIPATemp.dll
+G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.Properties.Resources.resources

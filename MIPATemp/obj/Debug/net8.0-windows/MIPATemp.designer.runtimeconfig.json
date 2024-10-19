@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\radeo\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\radeo\\.nuget\\packages"
+      "C:\\Users\\Mucea\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Mucea\\.nuget\\packages"
     ],
     "configProperties": {
       "System.Runtime.Serialization.EnableUnsafeBinaryFormatterSerialization": true,

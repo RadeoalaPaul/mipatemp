@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\facultate\\proiectSAIV\\MIPATemp\\MIPATemp.csproj": {}
+    "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj": {}
   },
   "projects": {
-    "D:\\facultate\\proiectSAIV\\MIPATemp\\MIPATemp.csproj": {
+    "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\facultate\\proiectSAIV\\MIPATemp\\MIPATemp.csproj",
+        "projectUniqueName": "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj",
         "projectName": "MIPATemp",
-        "projectPath": "D:\\facultate\\proiectSAIV\\MIPATemp\\MIPATemp.csproj",
-        "packagesPath": "C:\\Users\\radeo\\.nuget\\packages\\",
-        "outputPath": "D:\\facultate\\proiectSAIV\\MIPATemp\\obj\\",
+        "projectPath": "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj",
+        "packagesPath": "C:\\Users\\Mucea\\.nuget\\packages\\",
+        "outputPath": "G:\\visual studio\\mipatemp\\MIPATemp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\radeo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mucea\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
