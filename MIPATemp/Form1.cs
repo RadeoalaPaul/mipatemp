@@ -1,4 +1,6 @@
 using Microsoft.VisualBasic.ApplicationServices;
+using LiveCharts;
+using LiveCharts.Wpf;
 
 namespace MIPATemp
 {

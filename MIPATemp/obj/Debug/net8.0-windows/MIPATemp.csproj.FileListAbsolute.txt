@@ -64,3 +64,5 @@ G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.pdb
 G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.genruntimeconfig.cache
 G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\ref\MIPATemp.dll
 G:\visual studio\mipatemp\MIPATemp\obj\Debug\net8.0-windows\MIPATemp.Properties.Resources.resources
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\LiveCharts.dll
+G:\visual studio\mipatemp\MIPATemp\bin\Debug\net8.0-windows\LiveCharts.Wpf.dll
