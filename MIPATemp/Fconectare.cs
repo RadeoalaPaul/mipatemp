@@ -26,22 +26,24 @@ namespace MIPATemp
 
         }
 
-        public readonly string db_info = AppDomain.CurrentDomain.BaseDirectory + "/db_info.txt"; //definire adresa fisier
+        public readonly string db_file = AppDomain.CurrentDomain.BaseDirectory + "/db_info.txt"; //definire adresa fisier
+        //public readonly string server, database, user, password;
 
         bool Conexiune_db(string server, string user, string password, string database)
         {
             MySqlConnection conn = new MySqlConnection();
-            string string_conexiune = @"host = '" + server + "'; port = '3306';" + " password = '" + password + "'; user = '" + user + "'; database = '" + database + "';";
-            conn.ConnectionString = string_conexiune;
+            Meniu_principal principal = new Meniu_principal();
+            conn.ConnectionString = principal.string_conectare(server,user,password,database);
             try
             {
                 conn.Open();
-                Meniu_principal principal = new Meniu_principal();
+                conn.Close();
                 MessageBox.Show("Connected successfully!");
                 return true;
             }
             catch (Exception ex)
             {
+                MessageBox.Show("An error has occured during the process: " + ex.Message);
                 return false;
             }
         }
@@ -54,29 +56,23 @@ namespace MIPATemp
             database = t4Fcon.Text;
             password = t3Fcon.Text;
             user = t2Fcon.Text;
-
             if (Conexiune_db(server, user, password, database))
             {
-                //Creare fisier
-                if (!File.Exists(db_info))
+                //Creare / Modificare fisier
+                if (!File.Exists(db_file))
                 {
-                    File.Create(db_info);
-                    File.WriteAllLines(db_info, [server,user,password,database]);
+                    File.AppendAllLines(db_file, [server, user, password, database]);
                 }
                 else
                 {
-                    File.WriteAllLines(db_info, [server,user,password,database]);
+                    File.WriteAllLines(db_file, [server,user,password,database]);
                 }
                 /////////////////
-                this.Close();
+                this.Hide();
                 principal.Show();
+                principal.conectat = true;
             }
             else { }
-
-        }
-
-        private void Fconectare_Load(object sender, EventArgs e)
-        {
 
         }
 

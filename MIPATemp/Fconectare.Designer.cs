@@ -186,7 +186,6 @@
             MainMenuStrip = menuStrip1;
             Name = "Fconectare";
             Text = "Fconectare";
-            Load += Fconectare_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

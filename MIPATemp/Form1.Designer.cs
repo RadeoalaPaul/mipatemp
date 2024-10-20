@@ -62,6 +62,7 @@
             bGE.TabIndex = 1;
             bGE.Text = "Existent Graph";
             bGE.UseVisualStyleBackColor = true;
+            bGE.Click += bGE_Click;
             // 
             // bSE
             // 
@@ -73,6 +74,7 @@
             bSE.TabIndex = 2;
             bSE.Text = "Delete Existent Graph";
             bSE.UseVisualStyleBackColor = true;
+            bSE.Click += bSE_Click;
             // 
             // bNou
             // 
@@ -123,6 +125,7 @@
             TSHelp.Image = (Image)resources.GetObject("TSHelp.Image");
             TSHelp.Name = "TSHelp";
             TSHelp.Size = new Size(35, 30);
+            TSHelp.Click += TSHelp_Click;
             // 
             // Meniu_principal
             // 
@@ -138,6 +141,7 @@
             MainMenuStrip = menuStrip1;
             Name = "Meniu_principal";
             Text = "Main Menu";
+            Shown += Meniu_principal_Shown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
