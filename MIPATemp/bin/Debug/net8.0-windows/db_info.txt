@@ -1,4 +1,4 @@
 localhost
 root
 
-bazad
+hotel_database
