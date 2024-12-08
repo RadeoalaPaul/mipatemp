@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MIPATemp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0dde2e72842dd4267dd2c518d970ce16ced5c2af")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+605e72592673d8d4535796f8fe830ff78244508e")]
 [assembly: System.Reflection.AssemblyProductAttribute("MIPATemp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MIPATemp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

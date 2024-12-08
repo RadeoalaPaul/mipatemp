@@ -1,4 +1,4 @@
 localhost
 root
 
-hotel_database
+bazatest
