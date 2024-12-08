@@ -1,21 +1,21 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\",
+  "WorkspaceRootPath": "G:\\visual studio\\mipatemp\\MIPATemp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|g:\\visual studio\\mipatemp\\mipatemp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|d:\\facultate\\proiectsaiv\\mipa_temp\\mipatemp\\mipatemp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|g:\\visual studio\\mipatemp\\mipatemp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|d:\\facultate\\proiectsaiv\\mipa_temp\\mipatemp\\mipatemp\\fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|g:\\visual studio\\mipatemp\\mipatemp\\fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|G:\\visual studio\\mipatemp\\MIPATemp\\fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -32,9 +32,9 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Fconectare.cs",
-              "DocumentMoniker": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\Fconectare.cs",
+              "DocumentMoniker": "G:\\visual studio\\mipatemp\\MIPATemp\\Fconectare.cs",
               "RelativeDocumentMoniker": "Fconectare.cs",
-              "ToolTip": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\Fconectare.cs",
+              "ToolTip": "G:\\visual studio\\mipatemp\\MIPATemp\\Fconectare.cs",
               "RelativeToolTip": "Fconectare.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAwwEIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -45,9 +45,10 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Fconectare.cs [Design]",
-              "DocumentMoniker": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\Fconectare.cs",
+              "DocumentMoniker": "G:\\visual studio\\mipatemp\\MIPATemp\\Fconectare.cs",
               "RelativeDocumentMoniker": "Fconectare.cs",
               "ToolTip": "G:\\visual studio\\mipatemp\\MIPATemp\\Fconectare.cs [Design]",
+              "RelativeToolTip": "Fconectare.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T16:50:01.741Z"
             },
@@ -55,9 +56,9 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\Form1.cs",
+              "DocumentMoniker": "G:\\visual studio\\mipatemp\\MIPATemp\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\Form1.cs",
+              "ToolTip": "G:\\visual studio\\mipatemp\\MIPATemp\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -68,9 +69,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\Form1.cs",
+              "DocumentMoniker": "G:\\visual studio\\mipatemp\\MIPATemp\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\Form1.cs [Design]",
+              "ToolTip": "G:\\visual studio\\mipatemp\\MIPATemp\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T15:55:21.774Z",

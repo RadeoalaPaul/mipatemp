@@ -1679,19 +1679,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\radeo\\.nuget\\packages\\": {}
+    "C:\\Users\\Mucea\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\MIPATemp.csproj",
+      "projectUniqueName": "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj",
       "projectName": "MIPATemp",
-      "projectPath": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\MIPATemp.csproj",
-      "packagesPath": "C:\\Users\\radeo\\.nuget\\packages\\",
-      "outputPath": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\MIPATemp\\obj\\",
+      "projectPath": "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj",
+      "packagesPath": "C:\\Users\\Mucea\\.nuget\\packages\\",
+      "outputPath": "G:\\visual studio\\mipatemp\\MIPATemp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\radeo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mucea\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
