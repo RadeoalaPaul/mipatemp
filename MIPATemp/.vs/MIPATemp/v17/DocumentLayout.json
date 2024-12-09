@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|d:\\facultate\\proiectsaiv\\mipa_temp\\mipatemp\\mipatemp\\mipatemp\\globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:globalusing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|d:\\facultate\\proiectsaiv\\mipa_temp\\mipatemp\\mipatemp\\mipatemp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|d:\\facultate\\proiectsaiv\\mipa_temp\\mipatemp\\mipatemp\\mipatemp\\fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|d:\\facultate\\proiectsaiv\\mipa_temp\\mipatemp\\mipatemp\\mipatemp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C4D188ED-E581-4C6B-A68F-3048714BA731}|MIPATemp.csproj|solutionrelative:fconectare.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,40 +30,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "GlobalUsing.cs",
+              "DocumentMoniker": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\GlobalUsing.cs",
+              "RelativeDocumentMoniker": "GlobalUsing.cs",
+              "ToolTip": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\GlobalUsing.cs",
+              "RelativeToolTip": "GlobalUsing.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:40:48.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Fconectare.cs",
               "DocumentMoniker": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\Fconectare.cs",
               "RelativeDocumentMoniker": "Fconectare.cs",
               "ToolTip": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\Fconectare.cs",
               "RelativeToolTip": "Fconectare.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T16:55:23.826Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Fconectare.cs [Design]",
               "DocumentMoniker": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\Fconectare.cs",
               "RelativeDocumentMoniker": "Fconectare.cs",
-              "ToolTip": "G:\\visual studio\\mipatemp\\MIPATemp\\Fconectare.cs [Design]",
+              "ToolTip": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\Fconectare.cs [Design]",
+              "RelativeToolTip": "Fconectare.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-16T16:50:01.741Z"
+              "WhenOpened": "2024-10-16T16:50:01.741Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
               "DocumentMoniker": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-16T16:19:14.031Z",
               "EditorCaption": ""

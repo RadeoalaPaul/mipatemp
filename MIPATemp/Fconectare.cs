@@ -8,6 +8,9 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.IO.Ports;
+using System.Drawing.Text;
 
 namespace MIPATemp
 {
@@ -23,7 +26,6 @@ namespace MIPATemp
             Meniu_principal principal = new Meniu_principal();
             this.Close();
             principal.Show();
-
         }
 
         public readonly string db_file = AppDomain.CurrentDomain.BaseDirectory + "/db_info.txt"; //definire adresa fisier
