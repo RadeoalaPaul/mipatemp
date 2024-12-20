@@ -119,7 +119,7 @@
             // 
             bIesireFcon.Cursor = Cursors.Hand;
             bIesireFcon.Font = new Font("SimSun", 12F, FontStyle.Bold);
-            bIesireFcon.Location = new Point(121, 390);
+            bIesireFcon.Location = new Point(121, 275);
             bIesireFcon.Name = "bIesireFcon";
             bIesireFcon.Size = new Size(129, 23);
             bIesireFcon.TabIndex = 8;
@@ -131,7 +131,7 @@
             // 
             bConFcon.Cursor = Cursors.Hand;
             bConFcon.Font = new Font("SimSun", 12F, FontStyle.Bold);
-            bConFcon.Location = new Point(121, 347);
+            bConFcon.Location = new Point(121, 228);
             bConFcon.Name = "bConFcon";
             bConFcon.Size = new Size(129, 23);
             bConFcon.TabIndex = 9;
@@ -171,7 +171,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(345, 450);
+            ClientSize = new Size(345, 324);
             Controls.Add(menuStrip1);
             Controls.Add(bConFcon);
             Controls.Add(bIesireFcon);

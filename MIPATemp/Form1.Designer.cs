@@ -37,14 +37,16 @@
             menuStrip1 = new MenuStrip();
             TSInfo = new ToolStripMenuItem();
             TSHelp = new ToolStripMenuItem();
+            continut_bd = new DataGridView();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)continut_bd).BeginInit();
             SuspendLayout();
             // 
             // bIesire
             // 
             bIesire.Cursor = Cursors.Hand;
             bIesire.Font = new Font("SimSun", 12F, FontStyle.Bold);
-            bIesire.Location = new Point(50, 475);
+            bIesire.Location = new Point(50, 501);
             bIesire.Name = "bIesire";
             bIesire.Size = new Size(157, 66);
             bIesire.TabIndex = 0;
@@ -92,7 +94,7 @@
             // 
             bConectare.Cursor = Cursors.Hand;
             bConectare.Font = new Font("SimSun", 12F, FontStyle.Bold);
-            bConectare.Location = new Point(781, 475);
+            bConectare.Location = new Point(839, 501);
             bConectare.Name = "bConectare";
             bConectare.Size = new Size(157, 66);
             bConectare.TabIndex = 4;
@@ -127,6 +129,14 @@
             TSHelp.Size = new Size(35, 30);
             TSHelp.Click += TSHelp_Click;
             // 
+            // continut_bd
+            // 
+            continut_bd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            continut_bd.Location = new Point(213, 37);
+            continut_bd.Name = "continut_bd";
+            continut_bd.Size = new Size(783, 530);
+            continut_bd.TabIndex = 6;
+            // 
             // Meniu_principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -138,12 +148,14 @@
             Controls.Add(bGE);
             Controls.Add(bIesire);
             Controls.Add(menuStrip1);
+            Controls.Add(continut_bd);
             MainMenuStrip = menuStrip1;
             Name = "Meniu_principal";
             Text = "Main Menu";
             Shown += Meniu_principal_Shown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)continut_bd).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -158,5 +170,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem TSInfo;
         private ToolStripMenuItem TSHelp;
+        private DataGridView continut_bd;
     }
 }

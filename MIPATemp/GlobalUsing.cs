@@ -6,4 +6,5 @@ global using System.Threading.Tasks;
 global using MySql.Data;
 global using MySql.Data.MySqlClient;
 global using System.IO;
-
+global using System.Data;
+global using System.Text.RegularExpressions;

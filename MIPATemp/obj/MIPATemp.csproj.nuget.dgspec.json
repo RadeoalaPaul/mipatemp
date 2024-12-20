@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\MIPATemp.csproj": {}
+    "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj": {}
   },
   "projects": {
-    "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\MIPATemp.csproj": {
+    "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\MIPATemp.csproj",
+        "projectUniqueName": "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj",
         "projectName": "MIPATemp",
-        "projectPath": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\MIPATemp.csproj",
-        "packagesPath": "C:\\Users\\radeo\\.nuget\\packages\\",
-        "outputPath": "D:\\facultate\\proiectSAIV\\mipa_temp\\mipatemp\\mipatemp\\MIPATemp\\obj\\",
+        "projectPath": "G:\\visual studio\\mipatemp\\MIPATemp\\MIPATemp.csproj",
+        "packagesPath": "C:\\Users\\Mucea\\.nuget\\packages\\",
+        "outputPath": "G:\\visual studio\\mipatemp\\MIPATemp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\radeo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mucea\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "IronPython": {
+              "target": "Package",
+              "version": "[3.4.2, )"
+            },
             "LiveCharts.Wpf": {
               "target": "Package",
               "version": "[0.9.7, )"

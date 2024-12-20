@@ -1,0 +1,1 @@
+rezultat = 22

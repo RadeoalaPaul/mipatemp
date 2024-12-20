@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO;
-using System.IO.Ports;
-using System.Drawing.Text;
+﻿using System.Runtime.InteropServices;
 
 namespace MIPATemp
 {
     public partial class Fconectare : Form
     {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
         public Fconectare()
         {
             InitializeComponent();
+            AllocConsole();
         }
+
 
         private void bIesireFcon_Click(object sender, EventArgs e)
         {
@@ -40,12 +33,13 @@ namespace MIPATemp
             {
                 conn.Open();
                 conn.Close();
-                MessageBox.Show("Connected successfully!");
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error has occured during the process: " + ex.Message);
+                Console.WriteLine(ex.ToString());
+                Thread.Sleep(10000);
+                Console.Clear();
                 return false;
             }
         }
