@@ -38,6 +38,8 @@
             TSInfo = new ToolStripMenuItem();
             TSHelp = new ToolStripMenuItem();
             continut_bd = new DataGridView();
+            gfTemperatura = new ScottPlot.WinForms.FormsPlot();
+            gfUmiditate = new ScottPlot.WinForms.FormsPlot();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)continut_bd).BeginInit();
             SuspendLayout();
@@ -137,11 +139,29 @@
             continut_bd.Size = new Size(783, 530);
             continut_bd.TabIndex = 6;
             // 
+            // gfTemperatura
+            // 
+            gfTemperatura.DisplayScale = 1F;
+            gfTemperatura.Location = new Point(213, 37);
+            gfTemperatura.Name = "gfTemperatura";
+            gfTemperatura.Size = new Size(783, 295);
+            gfTemperatura.TabIndex = 7;
+            // 
+            // gfUmiditate
+            // 
+            gfUmiditate.DisplayScale = 1F;
+            gfUmiditate.Location = new Point(213, 334);
+            gfUmiditate.Name = "gfUmiditate";
+            gfUmiditate.Size = new Size(783, 233);
+            gfUmiditate.TabIndex = 8;
+            // 
             // Meniu_principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 611);
+            Controls.Add(gfUmiditate);
+            Controls.Add(gfTemperatura);
             Controls.Add(bConectare);
             Controls.Add(bNou);
             Controls.Add(bSE);
@@ -171,5 +191,7 @@
         private ToolStripMenuItem TSInfo;
         private ToolStripMenuItem TSHelp;
         private DataGridView continut_bd;
+        private ScottPlot.WinForms.FormsPlot gfTemperatura;
+        private ScottPlot.WinForms.FormsPlot gfUmiditate;
     }
 }

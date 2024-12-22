@@ -1,6 +1,8 @@
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
 using System.Diagnostics;
+using ScottPlot;
+using K4os.Compression.LZ4.Streams.Adapters;
 
 namespace MIPATemp
 {
@@ -18,7 +20,9 @@ namespace MIPATemp
         public Meniu_principal()
         {
             InitializeComponent();
-            continut_bd.Hide(); 
+            continut_bd.Hide();
+            gfTemperatura.Hide();
+            gfUmiditate.Hide();
         }
         public string string_conectare(string server, string user, string password, string database) //functie de creare string conectare
         {
@@ -27,6 +31,56 @@ namespace MIPATemp
         void citire_fisier(string adresa_fisier)
         {
             db_data = File.ReadAllLines(input_db.db_file);
+        }
+
+        void afisare_grafica()
+        {
+            gfTemperatura.Show();
+            gfUmiditate.Show();
+
+            gfTemperatura.Plot.Clear();
+            gfUmiditate.Plot.Clear();
+
+            List<float> temperatura = new List<float>();
+            List<float> umiditate = new List<float>();
+            List<float> timp = new List<float>();
+
+            foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory+"/temperatura.txt"))
+            {
+                if(float.TryParse(line, out float val))
+                {
+                    temperatura.Add(val);
+                }
+            }
+            foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/umiditate.txt"))
+            {
+                if (float.TryParse(line, out float val))
+                {
+                    umiditate.Add(val);
+                }
+            }
+            Console.Clear();
+            Console.WriteLine("Timp");
+            for(int i = 0; i < temperatura.Count;i++)
+            {
+                timp.Add(2*i);
+                Console.WriteLine(2 * i);
+            }
+            Console.WriteLine("Temperatura");
+            for (int i = 0; i < temperatura.Count; i++)
+            {
+                Console.WriteLine(temperatura[i]);
+            }
+            Console.WriteLine("Umiditate");
+            for (int i = 0; i < temperatura.Count; i++)
+            {
+                Console.WriteLine(umiditate[i]);
+            }
+
+            gfTemperatura.Plot.Add.Scatter(timp, temperatura);
+            gfUmiditate.Plot.Add.Scatter(timp, umiditate);
+
+
         }
 
         void prelucrare_python()
@@ -56,50 +110,51 @@ namespace MIPATemp
                 else
                 {
                     Console.WriteLine($"Script executat cu succes!");
+                    afisare_grafica();
                 }
             }
         }
         void Conexiune(string buton)
         {
-        try
-        {
-            if (conn.State == ConnectionState.Open)
+            try
             {
-                conn.Close();
-            }
-            else
-            {
-                conn.ConnectionString = adresa_conectare;
-                conn.Open();
-
-                if (buton != "bNou")
+                if (conn.State == ConnectionState.Open)
                 {
-                    string query;
-                    query = "SHOW TABLES";
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
-                    DataTable data = new DataTable();
-                    adapter.Fill(data);
-
-                    continut_bd.DataSource = data;
+                    conn.Close();
                 }
-                else //PARTE SCRIPT 
+                else
                 {
+                    conn.ConnectionString = adresa_conectare;
+                    conn.Open();
+
+                    if (buton != "bNou")
+                    {
+                        string query;
+                        query = "SHOW TABLES";
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+
+                        continut_bd.DataSource = data;
+                    }
+                    else //PARTE SCRIPT 
+                    {
                         prelucrare_python();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.ToString());
-        }
-    }
 
         void Selectat(string buton)
         {
             if (!selectat)
             {
                 selectat = true;
-                if(buton!="bNou") { continut_bd.Show(); }
+                if (buton != "bNou") { continut_bd.Show(); }
                 switch (buton)
                 {
                     case "bNou":
@@ -116,8 +171,11 @@ namespace MIPATemp
                         break;
                 }
             }
-            else {
+            else
+            {
                 continut_bd.Hide();
+                gfUmiditate.Hide();
+                gfTemperatura.Hide();
                 selectat = false;
                 bNou.Enabled = true;
                 bGE.Enabled = true;
@@ -167,18 +225,18 @@ namespace MIPATemp
         }
         private void bIesire_Click(object sender, EventArgs e) //BUTON IESIRE
         {
-           if(selectat)
-           {
+            if (selectat)
+            {
                 DialogResult result = MessageBox.Show("If you close the application your work will not be saved!\nClose?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
                     Application.Exit();
                 }
-           }
-           else
-           {
+            }
+            else
+            {
                 Application.Exit();
-           }
+            }
         }
 
         private void Meniu_principal_Shown(object sender, EventArgs e)
