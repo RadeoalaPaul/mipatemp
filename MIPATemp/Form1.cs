@@ -1,5 +1,6 @@
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
+using System.Diagnostics;
 
 namespace MIPATemp
 {
@@ -28,6 +29,36 @@ namespace MIPATemp
             db_data = File.ReadAllLines(input_db.db_file);
         }
 
+        void prelucrare_python()
+        {
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = @"C:\Users\Mucea\AppData\Local\Programs\Python\Python313\python.exe",
+                Arguments = @"C:\Users\Mucea\AppData\Local\Programs\Python\Python313\script\script.py",
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            using (Process process = new Process { StartInfo = startInfo })
+            {
+                process.Start();
+
+                string error = process.StandardError.ReadToEnd();
+
+                process.WaitForExit();
+
+                if (!string.IsNullOrEmpty(error))
+                {
+                    Console.WriteLine($"Eroare: {error}");
+                }
+                else
+                {
+                    Console.WriteLine($"Script executat cu succes!");
+                }
+            }
+        }
         void Conexiune(string buton)
         {
         try
@@ -53,18 +84,7 @@ namespace MIPATemp
                 }
                 else //PARTE SCRIPT 
                 {
-                        /*ScriptEngine engine = Python.CreateEngine();
-                        if(File.Exists(adresa_script))
-                        {
-                            ScriptScope scope = engine.CreateScope();
-                            engine.ExecuteFile(adresa_script, scope);
-                            dynamic rezultat = scope.GetVariable("rezultat");
-                            Console.WriteLine(rezultat);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Eroare: Nu exista fisier");
-                        }*/
+                        prelucrare_python();
                 }
             }
         }
