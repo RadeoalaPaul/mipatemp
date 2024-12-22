@@ -15,6 +15,7 @@ namespace MIPATemp
         private string adresa_conectare = "";
         private string[] db_data = { "", "", "", "" };
         private bool selectat = false;
+        private bool afisat = false;
         MySqlConnection conn = new MySqlConnection();
         ///
         public Meniu_principal()
@@ -45,14 +46,14 @@ namespace MIPATemp
             List<float> umiditate = new List<float>();
             List<float> timp = new List<float>();
 
-            foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory+"/temperatura.txt"))
+            foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory+"/temperatura.in"))
             {
                 if(float.TryParse(line, out float val))
                 {
                     temperatura.Add(val);
                 }
             }
-            foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/umiditate.txt"))
+            foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/umiditate.in"))
             {
                 if (float.TryParse(line, out float val))
                 {
@@ -79,7 +80,7 @@ namespace MIPATemp
 
             gfTemperatura.Plot.Add.Scatter(timp, temperatura);
             gfUmiditate.Plot.Add.Scatter(timp, umiditate);
-
+            afisat = true;
 
         }
 
@@ -139,7 +140,7 @@ namespace MIPATemp
                     }
                     else //PARTE SCRIPT 
                     {
-                        prelucrare_python();
+                        if (!afisat) { prelucrare_python(); }
                     }
                 }
             }
@@ -173,13 +174,27 @@ namespace MIPATemp
             }
             else
             {
-                continut_bd.Hide();
-                gfUmiditate.Hide();
-                gfTemperatura.Hide();
+                if (buton == "bNou")
+                {
+                    DialogResult result = MessageBox.Show("If you close the session you will lose this graph!\nIn order to not lose it click on Save Icon to save it first.","Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                    if(result == DialogResult.Yes)
+                    {
+                        bNou.Enabled = true;
+                        bGE.Enabled = true;
+                        bSE.Enabled = true;
+                        gfUmiditate.Hide();
+                        gfTemperatura.Hide();
+                    }
+                }
+                else
+                {
+                    continut_bd.Hide();
+                    bNou.Enabled = true;
+                    bGE.Enabled = true;
+                    bSE.Enabled = true;
+                }
                 selectat = false;
-                bNou.Enabled = true;
-                bGE.Enabled = true;
-                bSE.Enabled = true;
+                afisat = false;
             }
         }
 
