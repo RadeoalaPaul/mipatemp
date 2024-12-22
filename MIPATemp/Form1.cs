@@ -53,7 +53,7 @@ namespace MIPATemp
                 }
                 else //PARTE SCRIPT 
                 {
-                        ScriptEngine engine = Python.CreateEngine();
+                        /*ScriptEngine engine = Python.CreateEngine();
                         if(File.Exists(adresa_script))
                         {
                             ScriptScope scope = engine.CreateScope();
@@ -64,7 +64,7 @@ namespace MIPATemp
                         else
                         {
                             Console.WriteLine("Eroare: Nu exista fisier");
-                        }
+                        }*/
                 }
             }
         }
