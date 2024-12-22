@@ -185,6 +185,10 @@ namespace MIPATemp
                         gfUmiditate.Hide();
                         gfTemperatura.Hide();
                     }
+                    else
+                    {
+
+                    }
                 }
                 else
                 {
