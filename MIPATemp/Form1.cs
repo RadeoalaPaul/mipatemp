@@ -34,54 +34,79 @@ namespace MIPATemp
             db_data = File.ReadAllLines(input_db.db_file);
         }
 
+        /*void afisare_continut()
+        {
+                afisat = true;
+
+                string query;
+                query = "SHOW TABLES";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
+                DataTable data = new DataTable();
+                adapter.Fill(data);
+
+                continut_bd.DataSource = data;
+                continut_bd.Show();
+        }*/
+
         void afisare_grafica()
         {
-            gfTemperatura.Show();
-            gfUmiditate.Show();
-
-            gfTemperatura.Plot.Clear();
-            gfUmiditate.Plot.Clear();
-
-            List<float> temperatura = new List<float>();
-            List<float> umiditate = new List<float>();
-            List<float> timp = new List<float>();
-
-            foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory+"/temperatura.in"))
+            if (afisat)
             {
-                if(float.TryParse(line, out float val))
+                afisat = false;
+                gfTemperatura.Hide();
+                gfUmiditate.Hide();
+            }
+            else
+            {
+
+                gfTemperatura.Show();
+                gfUmiditate.Show();
+
+                gfTemperatura.Plot.Clear();
+                gfUmiditate.Plot.Clear();
+
+                List<float> temperatura = new List<float>();
+                List<float> umiditate = new List<float>();
+                List<float> timp = new List<float>();
+
+                foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/temperatura.in"))
                 {
-                    temperatura.Add(val);
+                    if (float.TryParse(line, out float val))
+                    {
+                        temperatura.Add(val);
+                    }
                 }
-            }
-            foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/umiditate.in"))
-            {
-                if (float.TryParse(line, out float val))
+                foreach (var line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/umiditate.in"))
                 {
-                    umiditate.Add(val);
+                    if (float.TryParse(line, out float val))
+                    {
+                        umiditate.Add(val);
+                    }
                 }
-            }
-            Console.Clear();
-            Console.WriteLine("Timp");
-            for(int i = 0; i < temperatura.Count;i++)
-            {
-                timp.Add(2*i);
-                Console.WriteLine(2 * i);
-            }
-            Console.WriteLine("Temperatura");
-            for (int i = 0; i < temperatura.Count; i++)
-            {
-                Console.WriteLine(temperatura[i]);
-            }
-            Console.WriteLine("Umiditate");
-            for (int i = 0; i < temperatura.Count; i++)
-            {
-                Console.WriteLine(umiditate[i]);
-            }
+                Console.Clear();
+                Console.WriteLine("Timp");
+                for (int i = 0; i < temperatura.Count; i++)
+                {
+                    timp.Add(2 * i);
+                    Console.WriteLine(2 * i);
+                }
+                Console.WriteLine("Temperatura");
+                for (int i = 0; i < temperatura.Count; i++)
+                {
+                    Console.WriteLine(temperatura[i]);
+                }
+                Console.WriteLine("Umiditate");
+                for (int i = 0; i < temperatura.Count; i++)
+                {
+                    Console.WriteLine(umiditate[i]);
+                }
 
-            gfTemperatura.Plot.Add.Scatter(timp, temperatura);
-            gfUmiditate.Plot.Add.Scatter(timp, umiditate);
-            afisat = true;
-
+                gfTemperatura.Plot.Add.Scatter(timp, temperatura);
+                gfUmiditate.Plot.Add.Scatter(timp, umiditate);
+                bGE.Enabled = false;
+                bSE.Enabled = false;
+                afisat = true;
+            }
         }
 
         void prelucrare_python()
@@ -107,6 +132,8 @@ namespace MIPATemp
                 if (!string.IsNullOrEmpty(error))
                 {
                     Console.WriteLine($"Eroare: {error}");
+                    MessageBox.Show("Connect the arduino to your PC!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Selectat("bNou");
                 }
                 else
                 {
@@ -125,11 +152,10 @@ namespace MIPATemp
                 }
                 else
                 {
-                    conn.ConnectionString = adresa_conectare;
-                    conn.Open();
-
                     if (buton != "bNou")
                     {
+                        conn.ConnectionString = adresa_conectare;
+                        conn.Open();
                         string query;
                         query = "SHOW TABLES";
                         MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn);
@@ -137,6 +163,7 @@ namespace MIPATemp
                         adapter.Fill(data);
 
                         continut_bd.DataSource = data;
+                        continut_bd.Show();
                     }
                     else //PARTE SCRIPT 
                     {
@@ -150,73 +177,65 @@ namespace MIPATemp
             }
         }
 
-        void Selectat(string buton)
+        void Selectat(string denumire_buton)
         {
             if (!selectat)
             {
                 selectat = true;
-                if (buton != "bNou") { continut_bd.Show(); }
-                switch (buton)
+                foreach (Control control in this.Controls)
                 {
-                    case "bNou":
-                        bGE.Enabled = false;
-                        bSE.Enabled = false;
-                        break;
-                    case "bGE":
-                        bNou.Enabled = false;
-                        bSE.Enabled = false;
-                        break;
-                    case "bSE":
-                        bNou.Enabled = false;
-                        bGE.Enabled = false;
-                        break;
+                    if (control is Button button)
+                    {
+                        if (button.Name != denumire_buton && button.Name != "bIesire" && button.Name != "bConectare")
+                        {
+                            button.Enabled = false;
+                        }
+                    }
                 }
             }
             else
             {
-                if (buton == "bNou")
-                {
-                    DialogResult result = MessageBox.Show("If you close the session you will lose this graph!\nIn order to not lose it click on Save Icon to save it first.","Warning",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
-                    if(result == DialogResult.Yes)
-                    {
-                        bNou.Enabled = true;
-                        bGE.Enabled = true;
-                        bSE.Enabled = true;
-                        gfUmiditate.Hide();
-                        gfTemperatura.Hide();
-                    }
-                    else
-                    {
-
-                    }
-                }
-                else
-                {
-                    continut_bd.Hide();
-                    bNou.Enabled = true;
-                    bGE.Enabled = true;
-                    bSE.Enabled = true;
-                }
                 selectat = false;
-                afisat = false;
+                foreach (Control control in this.Controls)
+                {
+                    if (control is Button button)
+                    {
+                        if (button.Name != denumire_buton && button.Name != "bIesire" && button.Name != "bConectare")
+                        {
+                            if (button.Name == "bSE" || button.Name == "bGE")
+                            {
+                                continut_bd.Hide();
+                            }
+                            button.Enabled = true;
+                        }
+                    }
+                }
             }
         }
 
         private void bNou_Click(object sender, EventArgs e) //BUTON GRAFIC NOU
         {
-            if (adresa_conectare != "")
+            if (!selectat)
             {
-                Conexiune("bNou");
-                Selectat(bNou.Name.ToString());
+                Selectat("bNou");
+                prelucrare_python();
             }
-            else MessageBox.Show("You need to connect to a database first", "New Graph", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                DialogResult raspuns = MessageBox.Show("If you click yes, you will lose this graph by not saving it!", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (raspuns == DialogResult.Yes)
+                {
+                    Selectat("bNou");
+                    afisare_grafica();
+                }
+            }
         }
         private void bSE_Click(object sender, EventArgs e) // BUTON STERGERE GRAFIC
         {
             if (adresa_conectare != "")
             {
+                Selectat("bSE");
                 Conexiune("bSE");
-                Selectat(bSE.Name.ToString());
             }
             else MessageBox.Show("You need to connect to a database first", "Delete Graph", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -224,8 +243,8 @@ namespace MIPATemp
         {
             if (adresa_conectare != "")
             {
+                Selectat("bGE");
                 Conexiune("bGE");
-                Selectat(bGE.Name.ToString());
             }
             else MessageBox.Show("You need to connect to a database first", "Existent Graph", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
