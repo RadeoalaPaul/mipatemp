@@ -37,6 +37,7 @@
             menuStrip1 = new MenuStrip();
             TSInfo = new ToolStripMenuItem();
             TSHelp = new ToolStripMenuItem();
+            TSSave = new ToolStripMenuItem();
             continut_bd = new DataGridView();
             gfTemperatura = new ScottPlot.WinForms.FormsPlot();
             gfUmiditate = new ScottPlot.WinForms.FormsPlot();
@@ -108,10 +109,10 @@
             // 
             menuStrip1.BackColor = SystemColors.ButtonHighlight;
             menuStrip1.ImageScalingSize = new Size(32, 32);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { TSInfo, TSHelp });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { TSInfo, TSHelp, TSSave });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1008, 34);
+            menuStrip1.Size = new Size(1008, 40);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -130,6 +131,15 @@
             TSHelp.Name = "TSHelp";
             TSHelp.Size = new Size(35, 30);
             TSHelp.Click += TSHelp_Click;
+            // 
+            // TSSave
+            // 
+            TSSave.Alignment = ToolStripItemAlignment.Right;
+            TSSave.Image = (Image)resources.GetObject("TSSave.Image");
+            TSSave.Margin = new Padding(0, 0, 25, 0);
+            TSSave.Name = "TSSave";
+            TSSave.Size = new Size(44, 36);
+            TSSave.Click += TSSave_Click;
             // 
             // continut_bd
             // 
@@ -193,5 +203,6 @@
         private DataGridView continut_bd;
         private ScottPlot.WinForms.FormsPlot gfTemperatura;
         private ScottPlot.WinForms.FormsPlot gfUmiditate;
+        private ToolStripMenuItem TSSave;
     }
 }

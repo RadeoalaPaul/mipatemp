@@ -12,8 +12,6 @@ namespace MIPATemp
             InitializeComponent();
             AllocConsole();
         }
-
-
         private void bIesireFcon_Click(object sender, EventArgs e)
         {
             Meniu_principal principal = new Meniu_principal();
@@ -35,11 +33,9 @@ namespace MIPATemp
                 conn.Close();
                 return true;
             }
-            catch (Exception ex)
+            catch(Exception)
             {
-                Console.WriteLine(ex.ToString());
-                Thread.Sleep(10000);
-                Console.Clear();
+                MessageBox.Show("An error occured (check connection and values)","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return false;
             }
         }
