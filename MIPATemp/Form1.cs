@@ -3,6 +3,10 @@ using Microsoft.Scripting.Hosting;
 using System.Diagnostics;
 using ScottPlot;
 using K4os.Compression.LZ4.Streams.Adapters;
+using IronPython.Compiler.Ast;
+using System.Drawing.Text;
+using System.Windows.Forms;
+using Google.Protobuf.WellKnownTypes;
 
 namespace MIPATemp
 {
@@ -16,18 +20,23 @@ namespace MIPATemp
         private string[] db_data = { "", "", "", "" };
         private bool selectat = false;
         private bool afisat = false;
+        private bool afisat_gf_existent = false;
         private bool salvat = false;
         MySqlConnection conn = new MySqlConnection();
         ///
         public Meniu_principal()
         {
             InitializeComponent();
+            //HIDE
             continut_bd.Hide();
             gfTemperatura.Hide();
             gfUmiditate.Hide();
-            TSSave.Visible = false; //de adaugat
+            TSSave.Visible = false;
+            //////
+            //DATA GRID VIEW
+
         }
-        public string string_conectare(string server, string user, string password, string database) //functie de creare string conectare
+        public string string_conectare(string server, string user, string password, string database) //FUNCTIE DE CREARE STRING CONECTARE
         {
             return @"host = '" + server + "'; port = '3306';" + " user = '" + user + "'; password = '" + password + "'; database = '" + database + "';";
         }
@@ -35,16 +44,110 @@ namespace MIPATemp
         {
             db_data = File.ReadAllLines(input_db.db_file);
         }
+        void salvare_grafic() //FUNCTIE SALVARE GRAFIC
+        {
+            //citire fisiere
+            float result;
+            int c = 0;
+            List<float> temperaturi = new List<float>();
+            List<float> umiditati = new List<float>();
+            List<int> timp = new List<int>();
+            foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/temperatura.in"))
+            {
+                result = float.Parse(line);
+                temperaturi.Add(result);
+                timp.Add(c * 2);
+                c++;
+            }
+            foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/umiditate.in"))
+            {
+                result = float.Parse(line);
+                umiditati.Add(result);
+            }
+            //creare tabel
+            //denumire
+            DateTime time = DateTime.Now;
+            string time_string = time.ToString("ddMMHHmmss");
+            Console.WriteLine(time_string);
+            //////////
+            MySqlCommand comanda_creare = new MySqlCommand("CREATE TABLE grafic" + time_string + " (X FLOAT, Yt FLOAT, Yu FLOAT);", conn);
+            comanda_creare.ExecuteNonQuery();
+            Console.Clear();
+            Console.WriteLine("Salvat!");
+            //scriere tabel
+            for (int i = 0; i < timp.Count; i++)
+            {
+                using (MySqlCommand comanda_scriere = new MySqlCommand("INSERT INTO grafic" + time_string + " (X,Yt,Yu) VALUES (@X,@Yt,@Yu);", conn))
+                {
+                    comanda_scriere.Parameters.AddWithValue("@X", timp[i]);
+                    comanda_scriere.Parameters.AddWithValue("@Yt", temperaturi[i]);
+                    comanda_scriere.Parameters.AddWithValue("@Yu", umiditati[i]);
+
+                    comanda_scriere.ExecuteNonQuery();
+                }
+            }
+            conn.Close();
+        }
+        void stergere_existent(string nume_tabel) //STERGERE TABEL CU GRAFIC EXISTENT
+        {
+            try
+            {
+                MySqlCommand delete = new MySqlCommand("DROP TABLE " + nume_tabel, conn);
+                conn.Open();
+                delete.ExecuteNonQuery();
+                conn.Close();
+                Conexiune("bSE");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+        void afisare_existent(string nume_tabel) //AFISARE GRAFIC EXISTENT
+        {
+            List<float> X = new List<float>();
+            List<float> Yt = new List<float>();
+            List<float> Yu = new List<float>();
+            MySqlCommand read = new MySqlCommand("SELECT X, Yt, Yu FROM " + nume_tabel, conn);
+
+            conn.Open();
+            try
+            {
+                using (MySqlDataReader reader = read.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        X.Add(float.Parse(reader["X"].ToString()));
+                        Yt.Add(float.Parse(reader["Yt"].ToString()));
+                        Yu.Add(float.Parse(reader["Yu"].ToString()));
+                    }
+                }
+            }
+            catch
+            {
+                conn.Close();
+            }
+            conn.Close();
+            //AFISARE
+            continut_bd.Hide();
+            gfTemperatura.Plot.Clear();
+            gfUmiditate.Plot.Clear();
+            gfTemperatura.Show();
+            gfUmiditate.Show();
+            gfTemperatura.Plot.Add.Scatter(X, Yt); //timp-temperatura
+            gfUmiditate.Plot.Add.Scatter(X, Yu); //timp-umiditate
+
+        }
         void afisare_grafica() //AFISARE GRAFICE SI SCRIERE IN FISIERE
         {
-            if (afisat)
+            if (afisat) //DEJA AFISAT -> ANULARE AFISARE
             {
                 afisat = false;
                 gfTemperatura.Hide();
                 gfUmiditate.Hide();
-                TSSave.Visible = false; //de adaugat
+                TSSave.Visible = false;
             }
-            else
+            else //NU E AFISAT -> AFISARE
             {
                 gfTemperatura.Show();
                 gfUmiditate.Show();
@@ -91,18 +194,18 @@ namespace MIPATemp
                 gfTemperatura.Plot.Add.Scatter(timp, temperatura);
                 gfUmiditate.Plot.Add.Scatter(timp, umiditate);
                 afisat = true;
-                if (adresa_conectare != "") // de adaugat
+                if (adresa_conectare != "")
                 {
                     TSSave.Visible = true;
                 }
             }
         }
         void prelucrare_python() //PORNIRE SCRIPT PYTHON SI PRELUCRARI
-            {
+        {
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
-                FileName = @"C:\Users\Mucea\AppData\Local\Programs\Python\Python313\python.exe",
-                Arguments = @"C:\Users\Mucea\AppData\Local\Programs\Python\Python313\script\script.py",
+                FileName = @"C:\Users\Mucea\AppData\Local\Programs\Python\Python313\python.exe", //adresa executabil interpreter
+                Arguments = @"C:\Users\Mucea\AppData\Local\Programs\Python\Python313\script\script.py", //adresa script
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
@@ -127,7 +230,7 @@ namespace MIPATemp
                 }
             }
         }
-        void Conexiune(string buton) 
+        void Conexiune(string buton) //EXTRAGEM TABELELE DIN BAZA DE DATE
         {
             try
             {
@@ -146,6 +249,7 @@ namespace MIPATemp
                         adapter.Fill(data);
                         continut_bd.DataSource = data;
                         continut_bd.Show();
+                        conn.Close();
                     }
                 }
             }
@@ -179,10 +283,7 @@ namespace MIPATemp
                     {
                         if (button.Name != denumire_buton && button.Name != "bIesire" && button.Name != "bConectare")
                         {
-                            if (button.Name == "bSE" || button.Name == "bGE")
-                            {
-                                continut_bd.Hide();
-                            }
+                            continut_bd.Hide();
                             button.Enabled = true;
                         }
                     }
@@ -228,8 +329,19 @@ namespace MIPATemp
         {
             if (adresa_conectare != "")
             {
-                Selectat("bGE");
-                Conexiune("bGE");
+                if (afisat_gf_existent)
+                {
+                    afisat_gf_existent = false;
+                    gfTemperatura.Hide();
+                    gfUmiditate.Hide();
+                    Selectat("bGE");
+                }
+                else
+                {
+                    Selectat("bGE");
+                    Conexiune("bGE");
+                    afisat_gf_existent = true;
+                }
             }
             else MessageBox.Show("You need to connect to a database first", "Existent Graph", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -270,50 +382,6 @@ namespace MIPATemp
                 adresa_conectare = string_conectare(db_data[0], db_data[1], db_data[2], db_data[3]);
             }
         }
-        void salvare_grafic() //FUNCTIE SALVARE GRAFIC
-        {
-            //citire fisiere
-            float result;
-            int c = 0;
-            List<float> temperaturi = new List<float>();
-            List<float> umiditati = new List<float>();
-            List<int> timp = new List<int>();
-            foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/temperatura.in"))
-            {
-                result = float.Parse(line);
-                temperaturi.Add(result);
-                timp.Add(c*2);
-                c++;
-            }
-            foreach (string line in File.ReadLines(AppDomain.CurrentDomain.BaseDirectory + "/umiditate.in"))
-            {
-                result = float.Parse(line);
-                umiditati.Add(result);
-            }
-            //creare tabel
-            //denumire
-            DateTime time = DateTime.Now;
-            string time_string = time.ToString("ddMMHHmmss");
-            Console.WriteLine(time_string);
-            //////////
-            MySqlCommand comanda_creare = new MySqlCommand("CREATE TABLE grafic" + time_string + " (X FLOAT, Yt FLOAT, Yu FLOAT);", conn);
-            comanda_creare.ExecuteNonQuery();
-            Console.Clear();
-            Console.WriteLine("Salvat!");
-            //scriere tabel
-            for(int i = 0; i < timp.Count; i++)
-            {
-                using(MySqlCommand comanda_scriere = new MySqlCommand("INSERT INTO grafic" + time_string + " (X,Yt,Yu) VALUES (@X,@Yt,@Yu);",conn))
-                {
-                    comanda_scriere.Parameters.AddWithValue("@X", timp[i]);
-                    comanda_scriere.Parameters.AddWithValue("@Yt", temperaturi[i]);
-                    comanda_scriere.Parameters.AddWithValue("@Yu", umiditati[i]);
-
-                    comanda_scriere.ExecuteNonQuery();
-                }
-            }
-            conn.Close();
-        }
         private void TSSave_Click(object sender, EventArgs e) //de adaugat
         {
             conn.ConnectionString = adresa_conectare;
@@ -322,6 +390,25 @@ namespace MIPATemp
             conn.Close();
 
             salvat = true;
+        }
+        private void continut_bd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (afisat_gf_existent) //cazul GRAFIC EXISTENT
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    var cellValue = continut_bd.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                    afisare_existent(cellValue.ToString());
+                }
+            }
+            else //cazul STERGERE EXISTENT
+            {
+                if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+                {
+                    var cellValue = continut_bd.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                    stergere_existent(cellValue.ToString());
+                }
+            }
         }
     }
 }

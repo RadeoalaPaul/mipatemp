@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\visual studio\\proiectSAIV\\mipatemp\\MIPATemp\\MIPATemp.csproj": {}
+    "G:\\visual studio\\MIPATemp\\MIPATemp.csproj": {}
   },
   "projects": {
-    "G:\\visual studio\\proiectSAIV\\mipatemp\\MIPATemp\\MIPATemp.csproj": {
+    "G:\\visual studio\\MIPATemp\\MIPATemp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\visual studio\\proiectSAIV\\mipatemp\\MIPATemp\\MIPATemp.csproj",
+        "projectUniqueName": "G:\\visual studio\\MIPATemp\\MIPATemp.csproj",
         "projectName": "MIPATemp",
-        "projectPath": "G:\\visual studio\\proiectSAIV\\mipatemp\\MIPATemp\\MIPATemp.csproj",
+        "projectPath": "G:\\visual studio\\MIPATemp\\MIPATemp.csproj",
         "packagesPath": "C:\\Users\\Mucea\\.nuget\\packages\\",
-        "outputPath": "G:\\visual studio\\proiectSAIV\\mipatemp\\MIPATemp\\obj\\",
+        "outputPath": "G:\\visual studio\\MIPATemp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mucea\\AppData\\Roaming\\NuGet\\NuGet.Config",

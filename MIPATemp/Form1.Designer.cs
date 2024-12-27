@@ -143,11 +143,15 @@
             // 
             // continut_bd
             // 
+            continut_bd.AllowUserToAddRows = false;
+            continut_bd.AllowUserToDeleteRows = false;
             continut_bd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            continut_bd.EditMode = DataGridViewEditMode.EditProgrammatically;
             continut_bd.Location = new Point(213, 37);
             continut_bd.Name = "continut_bd";
             continut_bd.Size = new Size(783, 530);
             continut_bd.TabIndex = 6;
+            continut_bd.CellDoubleClick += continut_bd_CellDoubleClick;
             // 
             // gfTemperatura
             // 
@@ -170,14 +174,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1008, 611);
-            Controls.Add(gfUmiditate);
-            Controls.Add(gfTemperatura);
-            Controls.Add(bConectare);
             Controls.Add(bNou);
             Controls.Add(bSE);
             Controls.Add(bGE);
             Controls.Add(bIesire);
             Controls.Add(menuStrip1);
+            Controls.Add(gfUmiditate);
+            Controls.Add(bConectare);
+            Controls.Add(gfTemperatura);
             Controls.Add(continut_bd);
             MainMenuStrip = menuStrip1;
             Name = "Meniu_principal";
